@@ -1,0 +1,18 @@
+{
+  "version": 4,
+  "dataForRoots": [
+    {
+      "commitData": [
+        {
+          "changeDescriptions": [],
+          "duration": 20,
+          "fiberActualDurations": [],
+          "fiberSelfDurations": [],
+          "interactionIDs": [],
+          "priorityLevel": "Immediate",
+          "timestamp": 1799.1000000038184
+        }
+      ]
+    }
+  ]
+}
