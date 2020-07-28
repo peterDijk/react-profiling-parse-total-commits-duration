@@ -19,9 +19,9 @@ interface Parse {
   allCommitsDuration: number[];
 }
 
-async function parse(): Promise<Parse> {
+async function parse(url): Promise<Parse> {
   try {
-    const inputData = await reader('../../input/profiling-data.27-07-2020.13-29-01.json');
+    const inputData = await reader(url);
 
     const parsedInput: ProfilingStructure = JSON.parse(inputData);
 
@@ -35,8 +35,8 @@ async function parse(): Promise<Parse> {
   }
 }
 
-async function run() {
-  const result = await parse();
+async function run(url) {
+  const result = await parse(url);
   const { allCommitsDuration } = result;
 
   const totalDuration = allCommitsDuration.reduce((acc, val) => {
@@ -47,4 +47,4 @@ async function run() {
   console.log({ length: allCommitsDuration.length, totalDuration });
 }
 
-run();
+run('../../input/profiling-data.27-07-2020.13-29-01.json');
