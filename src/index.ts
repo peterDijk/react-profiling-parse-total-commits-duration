@@ -1,4 +1,10 @@
 import reader from './utils/reader';
+const flags = require('flags');
+
+flags.defineString('file', 'default', 'Path to file');
+flags.parse();
+
+const inputFile = flags.get('file');
 
 interface ProfilingStructure {
   version: number;
@@ -47,4 +53,4 @@ async function run(url) {
   console.log({ length: allCommitsDuration.length, totalDuration });
 }
 
-run('../../input/profiling-data.27-07-2020.13-29-01.json');
+run(inputFile);
